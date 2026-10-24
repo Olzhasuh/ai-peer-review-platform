@@ -1,0 +1,7 @@
+%% Proposed design for supervisor review; not an implemented deployment.
+flowchart TB
+  C[Browser client<br/>Learner and teacher interfaces] --> B[Project backend<br/>Authentication and peer review logic]
+  B --> D[(Relational database<br/>Assignments submissions reviews)]
+  B --> M[Internally operated ML component<br/>Team trained model]
+  M --> B
+  B --> C
