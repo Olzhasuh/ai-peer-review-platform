@@ -1,0 +1,13 @@
+%% Conceptual design for review; no database implementation is claimed.
+erDiagram
+ USER ||--o{ ASSIGNMENT : teaches
+ USER ||--o{ SUBMISSION : writes
+ ASSIGNMENT ||--o{ SUBMISSION : receives
+ SUBMISSION ||--|{ TEXT_REVISION : contains
+ USER ||--o{ REVIEW_ALLOCATION : receives
+ TEXT_REVISION ||--o{ REVIEW_ALLOCATION : reviewed_via
+ REVIEW_ALLOCATION ||--o| REVIEW : produces
+ ASSIGNMENT ||--|{ RUBRIC_CRITERION : defines
+ REVIEW ||--|{ CRITERION_SCORE : contains
+ RUBRIC_CRITERION ||--o{ CRITERION_SCORE : assessed_by
+ TEXT_REVISION ||--o{ MODEL_PREDICTION : analyzed_by
